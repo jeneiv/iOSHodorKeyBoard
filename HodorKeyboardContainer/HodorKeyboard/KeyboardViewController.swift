@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton
     var hodorImage : UIImage
     var hodorHighLightedImage : UIImage
+    var player : AVAudioPlayer?
 
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         hodorImage = UIImage(named: "hodor")
         hodorHighLightedImage = UIImage(named: "hodor_highlighted")
+        var soundPath = NSBundle.mainBundle().URLForResource("Hodor", withExtension: "mp3")
+        if soundPath != nil {
+            let soundData = NSData(contentsOfURL: soundPath)
+            self.player = AVAudioPlayer(data: soundData, error:nil)
+        }
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -49,6 +56,7 @@ class KeyboardViewController: UIInputViewController {
         hodorButton.setImage(hodorImage, forState: UIControlState.Normal)
         hodorButton.setImage(hodorHighLightedImage, forState: UIControlState.Highlighted)
         hodorButton.addTarget(self, action:"hodorButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        hodorButton.addTarget(self, action:"playHodorSound", forControlEvents: UIControlEvents.TouchDown)
         hodorButton.contentMode = UIViewContentMode.ScaleAspectFit
         hodorButton.sizeToFit()
         hodorButton.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -65,6 +73,18 @@ class KeyboardViewController: UIInputViewController {
         
         var proxy = self.textDocumentProxy as UITextDocumentProxy
         proxy.insertText("hodor ")
+    }
+    
+    @IBAction func playHodorSound() {
+        if player?.data != nil {
+            if player?.playing {
+                player?.stop()
+                player?.play()
+            }
+            else {
+                player?.play()
+            }
+        }
     }
     
 }

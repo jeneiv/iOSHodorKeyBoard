@@ -11,6 +11,8 @@
 		7502D8831962F72300266F2C /* globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7502D8811962F72300266F2C /* globe@2x.png */; };
 		7502D8861962F7B200266F2C /* hodor_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 7502D8841962F7B200266F2C /* hodor_highlighted.png */; };
 		7502D8871962F7B200266F2C /* hodor_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7502D8851962F7B200266F2C /* hodor_highlighted@2x.png */; };
+		7502D88A1962FAE200266F2C /* Hodor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7502D8891962FAE200266F2C /* Hodor.mp3 */; };
+		7502D88C1962FE6000266F2C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7502D88B1962FE6000266F2C /* AVFoundation.framework */; };
 		756AE0871962AD79002026EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AE0861962AD79002026EC /* AppDelegate.swift */; };
 		756AE0891962AD7A002026EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756AE0881962AD7A002026EC /* Images.xcassets */; };
 		756AE0951962AD7A002026EC /* HodorKeyboardContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AE0941962AD7A002026EC /* HodorKeyboardContainerTests.swift */; };
@@ -64,6 +66,8 @@
 		7502D8811962F72300266F2C /* globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "globe@2x.png"; path = "Images/globe@2x.png"; sourceTree = "<group>"; };
 		7502D8841962F7B200266F2C /* hodor_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hodor_highlighted.png; path = Images/hodor_highlighted.png; sourceTree = "<group>"; };
 		7502D8851962F7B200266F2C /* hodor_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hodor_highlighted@2x.png"; path = "Images/hodor_highlighted@2x.png"; sourceTree = "<group>"; };
+		7502D8891962FAE200266F2C /* Hodor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Hodor.mp3; path = Sounds/Hodor.mp3; sourceTree = "<group>"; };
+		7502D88B1962FE6000266F2C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		756AE0811962AD79002026EC /* HodorKeyboardContainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HodorKeyboardContainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756AE0851962AD79002026EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		756AE0861962AD79002026EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,15 +102,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7502D88C1962FE6000266F2C /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7502D8881962FAD400266F2C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7502D8891962FAE200266F2C /* Hodor.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		756AE0781962AD79002026EC = {
 			isa = PBXGroup;
 			children = (
+				7502D88B1962FE6000266F2C /* AVFoundation.framework */,
 				756AE0831962AD79002026EC /* HodorKeyboardContainer */,
 				756AE0911962AD7A002026EC /* HodorKeyboardContainerTests */,
 				756AE0A31962ADAE002026EC /* HodorKeyboard */,
@@ -163,6 +177,7 @@
 		756AE0A31962ADAE002026EC /* HodorKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				7502D8881962FAD400266F2C /* Sounds */,
 				75758AAA1962D97A0091E760 /* Images */,
 				756AE0A61962ADAE002026EC /* KeyboardViewController.swift */,
 				756AE0A41962ADAE002026EC /* Supporting Files */,
@@ -316,6 +331,7 @@
 				7502D8831962F72300266F2C /* globe@2x.png in Resources */,
 				75758AAD1962D98D0091E760 /* hodor.png in Resources */,
 				7502D8861962F7B200266F2C /* hodor_highlighted.png in Resources */,
+				7502D88A1962FAE200266F2C /* Hodor.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
